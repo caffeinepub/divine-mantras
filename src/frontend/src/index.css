@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    /* Light background #F7F8FA */
+    --background: 0.975 0.003 264;
+    /* Near-black #111827 */
+    --foreground: 0.186 0.018 264;
+    /* Card white */
+    --card: 1.0 0 0;
+    --card-foreground: 0.186 0.018 264;
+    --popover: 1.0 0 0;
+    --popover-foreground: 0.186 0.018 264;
+    /* Saffron gold #F59E0B */
+    --primary: 0.782 0.175 74;
+    --primary-foreground: 1.0 0 0;
+    /* Navy #0F172A */
+    --secondary: 0.156 0.033 257;
+    --secondary-foreground: 1.0 0 0;
+    /* Light muted */
+    --muted: 0.955 0.004 264;
+    --muted-foreground: 0.511 0.013 264;
+    /* Teal #10B981 */
+    --accent: 0.694 0.168 162;
+    --accent-foreground: 1.0 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1.0 0 0;
+    /* Border #E5E7EB */
+    --border: 0.921 0.003 264;
+    --input: 0.921 0.003 264;
+    --ring: 0.782 0.175 74;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 1.0 0 0;
+    --sidebar-foreground: 0.186 0.018 264;
+    --sidebar-primary: 0.782 0.175 74;
+    --sidebar-primary-foreground: 1.0 0 0;
+    --sidebar-accent: 0.955 0.004 264;
+    --sidebar-accent-foreground: 0.186 0.018 264;
+    --sidebar-border: 0.921 0.003 264;
+    --sidebar-ring: 0.782 0.175 74;
+    /* Custom app tokens */
+    --navy: 0.156 0.033 257;
+    --saffron: 0.782 0.175 74;
+    --saffron-light: 0.92 0.11 74;
+    --teal: 0.694 0.168 162;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  .font-devanagari {
+    font-family: "Noto Sans Devanagari", sans-serif;
+  }
+
+  .font-telugu {
+    font-family: "Noto Sans Telugu", sans-serif;
+  }
+
+  .bg-navy {
+    background-color: oklch(var(--navy));
+  }
+
+  .text-saffron {
+    color: oklch(var(--saffron));
+  }
+
+  .bg-saffron {
+    background-color: oklch(var(--saffron));
+  }
+
+  .bg-saffron-light {
+    background-color: oklch(var(--saffron-light));
+  }
+
+  .border-saffron {
+    border-color: oklch(var(--saffron));
+  }
+
+  .text-teal {
+    color: oklch(var(--teal));
+  }
+
+  .bg-teal {
+    background-color: oklch(var(--teal));
+  }
+
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Bottom nav safe area */
+  .bottom-nav-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Skeleton animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
